@@ -10,7 +10,7 @@ body[data-theme=dark] {
 }
 
 h1 {
-  font: 700 39px/47px "inter", sans-serif;
+  font: 700 clamp(25px, 1.74vw + 18px, 39px)/1.2 "inter", sans-serif;
   color: oklch(15% 0.1 264deg);
 }
 [data-theme=dark] h1 {
@@ -18,7 +18,7 @@ h1 {
 }
 
 p {
-  font: 400 16px/24px "inter", sans-serif;
+  font: 400 clamp(15px, 0.28vw + 14px, 16px)/1.5 "inter", sans-serif;
   color: oklch(15% 0.1 264deg);
 }
 [data-theme=dark] p {
@@ -26,7 +26,7 @@ p {
 }
 
 button {
-  font: 400 16px/24px "inter", sans-serif;
+  font: 400 clamp(15px, 0.28vw + 14px, 16px)/1.5 "inter", sans-serif;
   color: oklch(15% 0.1 264deg);
   background-color: oklch(100% 0.05 264deg);
 }
@@ -44,7 +44,7 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font: 400 16px/24px "inter", sans-serif;
+  font: 400 clamp(15px, 0.28vw + 14px, 16px)/1.5 "inter", sans-serif;
   font-weight: 500;
   background-color: oklch(40% 0.1 264deg);
   color: oklch(100% 0.05 264deg);
@@ -109,6 +109,7 @@ button {
   background: oklch(96% 0.05 264deg);
   padding: 1rem 1.5rem;
   display: flex;
+  flex-grow: 1;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
@@ -118,6 +119,12 @@ button {
 [data-theme=dark] .header {
   background-color: oklch(15% 0.05 264deg);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
 }
 .header__search-toggle {
   display: none;
@@ -129,7 +136,7 @@ button {
   flex-shrink: 0;
 }
 .header__title {
-  font: 700 39px/47px "inter", sans-serif;
+  font: 700 clamp(25px, 1.74vw + 18px, 39px)/1.2 "inter", sans-serif;
   color: oklch(15% 0.1 264deg);
   margin: 0;
   margin-right: auto;
@@ -234,14 +241,15 @@ button {
   display: block;
 }
 
-div.header__right {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-shrink: 0;
-}
-
 @media (max-width: 768px) {
+  .header {
+    gap: 1rem;
+    padding: 1rem 1rem;
+  }
+  .header__right {
+    gap: 0.5rem;
+    flex-shrink: 1;
+  }
   .header__search-wrapper2 {
     display: none;
   }

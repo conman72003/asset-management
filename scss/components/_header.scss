@@ -5,6 +5,7 @@
     background: theme('bg');
     padding: 1rem 1.5rem;
     display: flex;
+    flex-grow: 1; 
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
@@ -16,6 +17,13 @@
     background-color: theme-dark('bg');
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; // Controls space between actions and profile
+    flex-shrink: 0;
+  }
+
   &__search-toggle {
             // The dedicated search button is now visible
             display: none;
@@ -148,14 +156,17 @@
 }
 }
 
-div.header__right {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem; // Controls space between actions and profile
-  flex-shrink: 0; // Prevents this group from shrinking
-}
 @media (max-width: 768px) {
     .header {
+        gap: 1rem;
+        padding: 1rem 1rem;
+
+
+        &__right{
+          gap: .5rem;
+          flex-shrink: 1;
+        }
+        
         &__search-wrapper2 {
             // On mobile, the wrapper loses its border and background
             display: none;
