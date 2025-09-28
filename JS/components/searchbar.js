@@ -4,6 +4,7 @@ export function initSearch(header) {
     const searchButton = header.querySelector('.header__search-wrapper .icon-button');
 
     function closeSearch() {
+        searchInput.value = '';
         header.classList.remove('search-active');
     }
 
