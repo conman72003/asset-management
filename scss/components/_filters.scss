@@ -8,6 +8,8 @@
     width: 20%;
     border: 2px solid theme('border');
     background: theme('bg');
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
 
     [data-theme="dark"] & {
     border-color: theme-dark('border');
@@ -23,4 +25,22 @@
     [data-theme="dark"] & {
     fill: theme-dark('text');
   }
+}
+
+@media (max-width: 768px) {
+    .filters {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 80%;  
+        max-width: 300px;
+        
+        transform: translateX(-100%); 
+    }
+
+    body.filters-active .filters {
+        transform: translateX(0);
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
 }

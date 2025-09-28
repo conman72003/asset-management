@@ -241,6 +241,15 @@ button {
   display: block;
 }
 
+.filter-toggle-button {
+  display: none;
+}
+@media (max-width: 768px) {
+  .filter-toggle-button {
+    display: flex;
+  }
+}
+
 @media (max-width: 768px) {
   .header {
     gap: 1rem;
@@ -259,24 +268,24 @@ button {
   .header__search-input {
     display: none;
   }
-  .header .header.search-active .header__title, .header .header.search-active .header__right {
-    display: none;
-  }
-  .header .header.search-active .header__search-wrapper2 {
-    display: flex;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0 1rem;
-    background: oklch(96% 0.05 264deg);
-  }
-  [data-theme=dark] .header .header.search-active .header__search-wrapper2 {
-    background: oklch(15% 0.05 264deg);
-  }
 }
+.header .search-active__title, .header .search-active__right {
+  display: none;
+}
+.header .search-active__search-wrapper2 {
+  display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+  background: oklch(96% 0.05 264deg);
+}
+[data-theme=dark] .header .search-active__search-wrapper2 {
+  background: oklch(15% 0.05 264deg);
+}
+
 .filters {
   display: flex;
   flex-direction: column;
@@ -284,6 +293,8 @@ button {
   width: 20%;
   border: 2px solid oklch(60% 0.1 264deg);
   background: oklch(96% 0.05 264deg);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
 }
 [data-theme=dark] .filters {
   border-color: oklch(40% 0.1 264deg);
@@ -299,6 +310,21 @@ button {
   fill: oklch(96% 0.1 264deg);
 }
 
+@media (max-width: 768px) {
+  .filters {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80%;
+    max-width: 300px;
+    transform: translateX(-100%);
+  }
+  body.filters-active .filters {
+    transform: translateX(0);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+  }
+}
 .tile-container {
   background-color: oklch(96% 0.05 264deg);
   border: 2px solid oklch(60% 0.1 264deg);
@@ -328,4 +354,10 @@ button {
 [data-theme=dark] .tile-image {
   stroke: oklch(40% 0.1 264deg);
   fill: oklch(20% 0.05 264deg);
+}
+
+@media (max-width: 768px) {
+  .tile-container {
+    width: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */

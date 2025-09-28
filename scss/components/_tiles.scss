@@ -33,3 +33,9 @@
     fill: theme-dark('bg-light');
   }
 }
+
+@media (max-width: 768px) {
+    .tile-container {
+        width: 100%;
+    }
+}
