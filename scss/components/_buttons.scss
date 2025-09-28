@@ -1,0 +1,76 @@
+@use '../abstracts' as *;
+
+.primary-button {
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font: $body;
+    font-weight: 500;
+    background-color: theme('primary');
+    color: theme('bg-light');
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+
+    [data-theme="dark"] & {
+        background-color: theme-dark('primary');
+        color: theme-dark('bg-light');
+    }
+
+    &:hover {
+        background-color: oklch(0.35 0.1 264); 
+        transform: translateY(-1px);
+        [data-theme="dark"] & {
+            background-color: oklch(0.66 0.1 264);
+        }
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.icon-button {
+    background: transparent;
+    color: theme('text-muted');
+    padding: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    [data-theme="dark"] & {
+        color: theme-dark('text-muted');
+    }
+
+    &:hover {
+        background-color: theme('bg-light');
+        color: theme('text');
+        [data-theme="dark"] & {
+            background-color: theme-dark('bg-light');
+            color: theme-dark('text');
+        }
+    }
+
+    > svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .primary-button__text {
+        display: none; 
+    }
+
+    .primary-button {
+      padding: 0.75rem;
+    }
+}

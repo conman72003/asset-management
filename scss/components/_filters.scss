@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+.filters{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 20%;
+    border: 2px solid theme('border');
+    background: theme('bg');
+
+    [data-theme="dark"] & {
+    border-color: theme-dark('border');
+    background: theme-dark('bg');
+  }
+}
+
+.dropdown-arrow{
+    width: 20px;   
+    height: 20px;
+    fill: theme(text);
+
+    [data-theme="dark"] & {
+    fill: theme-dark('text');
+  }
+}

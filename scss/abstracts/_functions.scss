@@ -1,0 +1,10 @@
+@use 'sass:map';
+@use 'colors' as *; 
+
+@function theme($key) {
+  @return map.get($themes, 'light', $key);
+}
+
+@function theme-dark($key) {
+  @return map.get($themes, 'dark', $key);
+}

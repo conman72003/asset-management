@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+
+.tile-container {
+  background-color: theme('bg');
+  border: 2px solid theme('border');
+  height: 90vh;
+  width: 80%;
+
+  [data-theme="dark"] & {
+    background-color: theme-dark('bg');
+    border-color: theme-dark('border');
+  }
+}
+
+.tile {
+  border: 2px solid theme('border');
+  border-radius: 10px;
+  background-color: theme('bg-light');
+  display: flex;
+
+  [data-theme="dark"] & {
+    border-color: theme-dark('border');
+    background-color: theme-dark('bg-light');
+  }
+}
+
+.tile-image {
+  stroke: theme('border');
+  fill: theme('bg-light');
+
+  [data-theme="dark"] & {
+    stroke: theme-dark('border');
+    fill: theme-dark('bg-light');
+  }
+}

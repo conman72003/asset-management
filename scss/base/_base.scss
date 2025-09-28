@@ -1,0 +1,47 @@
+@use '../abstracts' as *;
+
+
+body{
+    font: $ff;
+    background: theme('bg-dark');
+    color: theme('text');
+    margin: 0;
+
+    &[data-theme="dark"] {
+    background: theme-dark('bg-dark');
+    color: theme-dark('text');
+  }
+}
+
+h1 {
+  font: $h1;
+  color: theme('text');
+
+  [data-theme="dark"] & {
+    color: theme-dark('text');
+  }
+}
+
+p {
+  font: $body;
+  color: theme('text');
+
+  [data-theme="dark"] & {
+    color: theme-dark('text');
+  }
+}
+
+button {
+  font: $body;
+  color: theme('text');
+  background-color: theme('bg-light');
+
+  [data-theme="dark"] & {
+    color: theme-dark('text');
+    background-color: theme-dark('bg-light');
+  }
+}
+
+.main {
+  display: flex;
+}
