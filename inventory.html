@@ -80,26 +80,52 @@
 
             <div class="filters__section">
                 <h3 class="filters__header">Categories</h3>
-                <button class="filters__button">
-                    <span>Device Status</span>
-                    <svg class="dropdown-arrow">
-                        <use href="#icon-dropdown-arrow"></use>
-                    </svg>
-                </button>
 
-                <button class="filters__button">
-                    <span>Device Type</span>
-                    <svg class="dropdown-arrow">
-                        <use href="#icon-dropdown-arrow"></use>
-                    </svg>
-                </button>
+                <div class="filters__dropdown-wrapper">
+                    <button class="filters__button">
+                        <span>Device Status</span>
+                        <svg class="dropdown-arrow">
+                            <use href="#icon-dropdown-arrow"></use>
+                        </svg>
+                    </button>
 
-                <button class="filters__button">
-                    <span>Assigned To</span>
-                    <svg class="dropdown-arrow">
-                        <use href="#icon-dropdown-arrow"></use>
-                    </svg>
-                </button>
+                    <div class="filters__dropdown" id="status-dropdown">
+                        <label><input type="checkbox" name="status" value="available"> Available</label>
+                        <label><input type="checkbox" name="status" value="in-use"> In Use</label>
+                        <label><input type="checkbox" name="status" value="in-repair"> In Repair</label>
+                    </div>
+
+                </div>
+
+                <div class="filters__dropdown-wrapper">
+                    <button class="filters__button">
+                        <span>Device Type</span>
+                        <svg class="dropdown-arrow">
+                            <use href="#icon-dropdown-arrow"></use>
+                        </svg>
+                    </button>
+
+                    <div class="filters__dropdown" id="type-dropdown">
+                        <label><input type="checkbox" name="type" value="laptop"> Laptop</label>
+                        <label><input type="checkbox" name="type" value="phone"> Phone</label>
+                        <label><input type="checkbox" name="type" value="tablet"> Tablet</label>
+                    </div>
+                </div>
+
+                <div class="filters__dropdown-wrapper">
+                    <button class="filters__button">
+                        <span>Assigned To</span>
+                        <svg class="dropdown-arrow">
+                            <use href="#icon-dropdown-arrow"></use>
+                        </svg>
+                    </button>
+                    
+                    <div class="filters__dropdown" id="assigned-dropdown">
+                        <label><input type="checkbox" name="user" value="conner"> Conner</label>
+                        <label><input type="checkbox" name="user" value="test"> Test</label>
+                        <label><input type="checkbox" name="user" value="unassigned"> Unassigned</label>
+                    </div>
+                </div>
             </div>
         </div>
 
