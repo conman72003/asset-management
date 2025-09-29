@@ -72,26 +72,35 @@
 
     <div class="main">
         <div class="filters">
-            <button>Apply Filter</button>
-            <button>Clear Filter</button>
+            <div class="filters__section">
+                <button class="primary-button">Apply Filter</button>
+                <button class="secondary-button">Clear Filter</button>
+            </div>
 
-            <button>Device Status
-                <svg class="dropdown-arrow">
-                    <use href="#icon-dropdown-arrow"></use>
-                </svg>
-            </button>
 
-            <button>Device Type
-                <svg class="dropdown-arrow">
-                    <use href="#icon-dropdown-arrow"></use>
-                </svg>
-            </button>
+            <div class="filters__section">
+                <h3 class="filters__header">Categories</h3>
+                <button class="filters__button">
+                    <span>Device Status</span>
+                    <svg class="dropdown-arrow">
+                        <use href="#icon-dropdown-arrow"></use>
+                    </svg>
+                </button>
 
-            <button>Assigned To
-                <svg class="dropdown-arrow">
-                    <use href="#icon-dropdown-arrow"></use>
-                </svg>
-            </button>
+                <button class="filters__button">
+                    <span>Device Type</span>
+                    <svg class="dropdown-arrow">
+                        <use href="#icon-dropdown-arrow"></use>
+                    </svg>
+                </button>
+
+                <button class="filters__button">
+                    <span>Assigned To</span>
+                    <svg class="dropdown-arrow">
+                        <use href="#icon-dropdown-arrow"></use>
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <div class="tile-container">

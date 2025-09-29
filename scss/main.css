@@ -1,6 +1,6 @@
 body {
   font: "inter", sans-serif;
-  background: oklch(92% 0.05 264deg);
+  background: oklch(98% 0.05 264deg);
   color: oklch(15% 0.1 264deg);
   margin: 0;
 }
@@ -28,7 +28,7 @@ p {
 button {
   font: 400 clamp(15px, 0.28vw + 14px, 16px)/1.5 "inter", sans-serif;
   color: oklch(15% 0.1 264deg);
-  background-color: oklch(100% 0.05 264deg);
+  background-color: oklch(92% 0.05 264deg);
 }
 [data-theme=dark] button {
   color: oklch(96% 0.1 264deg);
@@ -39,7 +39,7 @@ button {
   display: flex;
 }
 
-.primary-button {
+.primary-button, .secondary-button {
   padding: 0.75rem 1.25rem;
   border: none;
   border-radius: 8px;
@@ -47,25 +47,25 @@ button {
   font: 400 clamp(15px, 0.28vw + 14px, 16px)/1.5 "inter", sans-serif;
   font-weight: 500;
   background-color: oklch(40% 0.1 264deg);
-  color: oklch(100% 0.05 264deg);
+  color: oklch(92% 0.05 264deg);
   transition: background-color 0.2s ease, transform 0.1s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
 }
-[data-theme=dark] .primary-button {
+[data-theme=dark] .primary-button, [data-theme=dark] .secondary-button {
   background-color: oklch(76% 0.1 264deg);
   color: oklch(20% 0.05 264deg);
 }
-.primary-button:hover {
+.primary-button:hover, .secondary-button:hover {
   background-color: oklch(35% 0.1 264deg);
   transform: translateY(-1px);
 }
-[data-theme=dark] .primary-button:hover {
+[data-theme=dark] .primary-button:hover, [data-theme=dark] .secondary-button:hover {
   background-color: oklch(66% 0.1 264deg);
 }
-.primary-button:active {
+.primary-button:active, .secondary-button:active {
   transform: translateY(0);
 }
 
@@ -85,7 +85,7 @@ button {
   color: oklch(76% 0.1 264deg);
 }
 .icon-button:hover {
-  background-color: oklch(100% 0.05 264deg);
+  background-color: oklch(92% 0.05 264deg);
   color: oklch(15% 0.1 264deg);
 }
 [data-theme=dark] .icon-button:hover {
@@ -97,11 +97,28 @@ button {
   height: 22px;
 }
 
+.secondary-button {
+  background-color: oklch(92% 0.05 264deg);
+  color: oklch(15% 0.1 264deg);
+  border: 1px solid oklch(60% 0.1 264deg);
+}
+[data-theme=dark] .secondary-button {
+  background-color: oklch(20% 0.05 264deg);
+  color: oklch(96% 0.1 264deg);
+  border-color: oklch(40% 0.1 264deg);
+}
+.secondary-button:hover {
+  background-color: oklch(96% 0.05 264deg);
+}
+[data-theme=dark] .secondary-button:hover {
+  background-color: oklch(15% 0.05 264deg);
+}
+
 @media (max-width: 768px) {
   .primary-button__text {
     display: none;
   }
-  .primary-button {
+  .primary-button, .secondary-button {
     padding: 0.75rem;
   }
 }
@@ -154,7 +171,7 @@ button {
   min-width: 150px;
   border: 1px solid oklch(70% 0.1 264deg);
   border-radius: 8px;
-  background: oklch(100% 0.05 264deg);
+  background: oklch(92% 0.05 264deg);
   max-width: 600px;
   min-width: 150px;
 }
@@ -179,7 +196,7 @@ button {
   flex-grow: 1;
   min-width: 150px;
   padding: 0.75rem 0rem;
-  background-color: oklch(100% 0.05 264deg);
+  background-color: oklch(92% 0.05 264deg);
   font: var(--body);
   border: none;
   color: oklch(15% 0.1 264deg);
@@ -307,14 +324,54 @@ button {
   flex-direction: column;
   height: 90vh;
   width: 20%;
-  border: 2px solid oklch(60% 0.1 264deg);
+  border-inline-end: 1px solid oklch(60% 0.1 264deg);
   background: oklch(96% 0.05 264deg);
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
+  padding: 1.5rem;
+  gap: 1.5rem;
 }
 [data-theme=dark] .filters {
   border-color: oklch(40% 0.1 264deg);
   background: oklch(15% 0.05 264deg);
+}
+.filters__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.filters__header {
+  font: 600 clamp(20px, 0.87vw + 17px, 25px)/1.4 "inter", sans-serif;
+  color: oklch(40% 0.1 264deg);
+  margin: 0;
+  padding: 0 0.5rem;
+}
+.filters__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: oklch(92% 0.05 264deg);
+  border: 1px solid oklch(70% 0.1 264deg);
+  border-radius: 8px;
+  font: 400 clamp(15px, 0.28vw + 14px, 16px)/1.5 "inter", sans-serif;
+  color: oklch(15% 0.1 264deg);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+[data-theme=dark] .filters__button {
+  background-color: oklch(20% 0.05 264deg);
+  border-color: oklch(30% 0.1 264deg);
+  color: oklch(96% 0.1 264deg);
+}
+.filters__button:hover {
+  background-color: oklch(96% 0.05 264deg);
+  border-color: oklch(60% 0.1 264deg);
+}
+[data-theme=dark] .filters__button:hover {
+  background-color: oklch(15% 0.05 264deg);
+  border-color: oklch(40% 0.1 264deg);
 }
 
 .dropdown-arrow {
@@ -355,7 +412,7 @@ button {
 .tile {
   border: 2px solid oklch(60% 0.1 264deg);
   border-radius: 10px;
-  background-color: oklch(100% 0.05 264deg);
+  background-color: oklch(92% 0.05 264deg);
   display: flex;
 }
 [data-theme=dark] .tile {
@@ -365,7 +422,7 @@ button {
 
 .tile-image {
   stroke: oklch(60% 0.1 264deg);
-  fill: oklch(100% 0.05 264deg);
+  fill: oklch(92% 0.05 264deg);
 }
 [data-theme=dark] .tile-image {
   stroke: oklch(40% 0.1 264deg);

@@ -65,6 +65,26 @@
     }
 }
 
+.secondary-button {
+    @extend .primary-button;
+    background-color: theme('bg-light');
+    color: theme('text');
+    border: 1px solid theme('border');
+
+    [data-theme="dark"] & {
+        background-color: theme-dark('bg-light');
+        color: theme-dark('text');
+        border-color: theme-dark('border');
+    }
+
+    &:hover {
+        background-color: theme('bg');
+        [data-theme="dark"] & {
+            background-color: theme-dark('bg');
+        }
+    }
+}
+
 @media (max-width: 768px) {
     .primary-button__text {
         display: none; 

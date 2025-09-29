@@ -1,9 +1,9 @@
 // This is where ALL your $ variables go.
 $themes:(
     light:(
-        bg-dark: oklch(0.92 0.05 264),
+        bg-dark: oklch(.98 0.05 264),
         bg: oklch(0.96 0.05 264),
-        bg-light: oklch(1 0.05 264),
+        bg-light: oklch(0.92 0.05 264),
         text: oklch(0.15 0.1 264),
         text-muted: oklch(0.4 0.1 264),
         highlight: oklch(1 0.1 264),
