@@ -32,6 +32,12 @@
         </symbol>
     </svg>
 
+    <svg style="display: none;">
+        <symbol id="icon-checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </symbol>
+    </svg>
+
 
     <header class="header">
         <h1 class="header__title">Inventory</h1>
@@ -119,11 +125,35 @@
                             <use href="#icon-dropdown-arrow"></use>
                         </svg>
                     </button>
-                    
+
                     <div class="filters__dropdown" id="assigned-dropdown">
-                        <label><input type="checkbox" name="user" value="conner"> Conner</label>
-                        <label><input type="checkbox" name="user" value="test"> Test</label>
-                        <label><input type="checkbox" name="user" value="unassigned"> Unassigned</label>
+                        <input type="text" class="filters__dropdown-search" placeholder="Search users...">
+                        
+                        <div class="filters__dropdown-options">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" name="user" value="conner">
+                                <span class="custom-checkbox__box">
+                                    <svg class="custom-checkbox__icon"><use href="#icon-checkmark"></use></svg>
+                                </span>
+                                <span>Conner</span>
+                            </label>
+
+                            <label class="custom-checkbox">
+                                <input type="checkbox" name="user" value="test">
+                                <span class="custom-checkbox__box">
+                                    <svg class="custom-checkbox__icon"><use href="#icon-checkmark"></use></svg>
+                                </span>
+                                <span>Test</span>
+                            </label>
+                            
+                            <label class="custom-checkbox">
+                                <input type="checkbox" name="user" value="unassigned">
+                                <span class="custom-checkbox__box">
+                                    <svg class="custom-checkbox__icon"><use href="#icon-checkmark"></use></svg>
+                                </span>
+                                <span>Unassigned</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
