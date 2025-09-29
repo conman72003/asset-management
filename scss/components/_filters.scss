@@ -195,12 +195,16 @@
     }
 
     &__icon {
-        width: 14px;
-        height: 14px;
-        stroke: theme('bg-light');
-        opacity: 0;
-        transform: scale(0.8);
-        transition: opacity 0.2s, transform 0.2s;
+      width: 14px;
+      height: 14px;
+      stroke: theme('bg-light');
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.2s, transform 0.2s;
+
+      [data-theme="dark"] & {
+      stroke: theme-dark('bg-light');
+      }
     }
 }
 
