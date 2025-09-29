@@ -195,16 +195,12 @@
     }
 
     &__icon {
-      width: 14px;
-      height: 14px;
-      stroke: theme('bg-light');
-      opacity: 0;
-      transform: scale(0.8);
-      transition: opacity 0.2s, transform 0.2s;
-
-      [data-theme="dark"] & {
-      stroke: theme-dark('bg-light');
-      }
+        width: 14px;
+        height: 14px;
+        stroke: theme('bg-light');
+        opacity: 0;
+        transform: scale(0.8);
+        transition: opacity 0.2s, transform 0.2s;
     }
 }
 
@@ -215,6 +211,7 @@
     .custom-checkbox__icon {
         opacity: 1;
         transform: scale(1);
+        stroke: theme('bg-light');
     }
 
     [data-theme="dark"] & {

@@ -493,9 +493,6 @@ button {
   transform: scale(0.8);
   transition: opacity 0.2s, transform 0.2s;
 }
-[data-theme=dark] .custom-checkbox__icon {
-  stroke: oklch(20% 0.05 264deg);
-}
 
 .custom-checkbox input[type=checkbox]:checked + .custom-checkbox__box {
   background-color: oklch(40% 0.1 264deg);
@@ -504,6 +501,7 @@ button {
 .custom-checkbox input[type=checkbox]:checked + .custom-checkbox__box .custom-checkbox__icon {
   opacity: 1;
   transform: scale(1);
+  stroke: oklch(92% 0.05 264deg);
 }
 [data-theme=dark] .custom-checkbox input[type=checkbox]:checked + .custom-checkbox__box {
   background-color: oklch(76% 0.1 264deg);
