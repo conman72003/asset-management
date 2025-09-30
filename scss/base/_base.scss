@@ -6,6 +6,10 @@ body{
     background: theme('bg-dark');
     color: theme('text');
     margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 
     &[data-theme="dark"] {
     background: theme-dark('bg-dark');
@@ -44,4 +48,6 @@ button {
 
 .main {
   display: flex;
+  flex-grow: 1;
+  overflow: hidden;
 }

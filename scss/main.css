@@ -3,6 +3,10 @@ body {
   background: oklch(98% 0.05 264deg);
   color: oklch(15% 0.1 264deg);
   margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 body[data-theme=dark] {
   background: oklch(10% 0.05 264deg);
@@ -37,6 +41,8 @@ button {
 
 .main {
   display: flex;
+  flex-grow: 1;
+  overflow: hidden;
 }
 
 .primary-button, .secondary-button {
@@ -527,20 +533,65 @@ button {
   height: 90vh;
   width: 80%;
   border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  align-content: start;
 }
 [data-theme=dark] .tile-container {
   background-color: oklch(15% 0.05 264deg);
 }
 
 .tile {
-  border: 2px solid oklch(60% 0.1 264deg);
-  border-radius: 10px;
   background-color: oklch(92% 0.05 264deg);
-  display: flex;
+  border: 2px solid oklch(60% 0.1 264deg);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.tile:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 [data-theme=dark] .tile {
   border-color: oklch(40% 0.1 264deg);
   background-color: oklch(20% 0.05 264deg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+[data-theme=dark] .tile:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.tile__checkbox {
+  grid-row: span 2;
+}
+.tile__icon {
+  width: 40px;
+  height: 40px;
+  stroke: oklch(40% 0.1 264deg);
+  color: oklch(92% 0.05 264deg);
+  fill: oklch(92% 0.05 264deg);
+  grid-row: span 2;
+}
+[data-theme=dark] .tile__icon {
+  fill: oklch(20% 0.05 264deg);
+}
+.tile__main-info {
+  font: 600 clamp(18px, 0.56vw + 16px, 20px)/1.5 "inter", sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+.tile__sub-info {
+  font: 400 clamp(13px, 0.28vw + 12px, 14px)/1.5 "inter", sans-serif;
+  color: oklch(40% 0.1 264deg);
+  margin: 0;
+}
+[data-theme=dark] .tile__sub-info {
+  color: oklch(76% 0.1 264deg);
 }
 
 .tile-image {
@@ -555,5 +606,7 @@ button {
 @media (max-width: 768px) {
   .tile-container {
     width: 100%;
+    padding: 1rem;
+    grid-template-columns: 1fr;
   }
 }/*# sourceMappingURL=main.css.map */
