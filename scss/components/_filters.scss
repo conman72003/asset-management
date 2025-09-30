@@ -4,10 +4,8 @@
 .filters{
     display: flex;
     flex-direction: column;
-    height: 90vh;
     width: 20%;
-    border-inline-end: 1px solid theme('border');
-    background: theme('bg');
+    background: theme('bg-dark');
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
 
@@ -15,8 +13,7 @@
     gap: 1.5rem;
 
     [data-theme="dark"] & {
-    border-color: theme-dark('border');
-    background: theme-dark('bg');
+    background: theme-dark('bg-dark');
   }
 
   &__section{

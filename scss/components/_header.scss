@@ -2,7 +2,7 @@
 @use '../abstracts' as *;
 
 .header{
-    background: theme('bg');
+    background: theme('bg-dark');
     padding: 1rem 1.5rem;
     display: flex;
     flex-grow: 1; 
@@ -10,22 +10,20 @@
     align-items: center;
     gap: 1.5rem;
 
-    border-bottom: 1px solid theme('border');
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
     [data-theme="dark"] & {
-    background-color: theme-dark('bg');
+    background-color: theme-dark('bg-dark');
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
   &__right {
     display: flex;
     align-items: center;
-    gap: 1.5rem; // Controls space between actions and profile
+    gap: 1.5rem;
     flex-shrink: 0;
   }
 
   &__search-toggle {
-            // The dedicated search button is now visible
             display: none;
         } 
 
@@ -157,10 +155,10 @@
 }
 
 .filter-toggle-button {
-    display: none; // Hide by default on desktop
+    display: none;
 
     @media (max-width: 768px) {
-        display: flex; // Show it only on mobile
+        display: flex; 
     }
 }
 
@@ -176,23 +174,20 @@
         }
         
         &__search-wrapper2 {
-            // On mobile, the wrapper loses its border and background
             display: none;
         }
 
         &__search-toggle {
-            // The dedicated search button is now visible
             display: flex;
         }
 
         &__search-input {
-            // The input field is hidden
             display: none;
         }
 
         &.search-active {
           .header__title, .header__right {
-              display: none; // Hide title and icons
+              display: none;
           }
 
           .header__search-wrapper2 {
@@ -218,20 +213,19 @@
 
 .header .search-active {
   &__title, &__right {
-      display: none; // Hide the title and right-side icons
+      display: none; 
   }
 
   &__search-wrapper2 {
-      display: flex; // Show the search bar
+      display: flex;
       left: 0;
       right: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      padding: 0 1rem; // Add some padding
-      background: theme('bg'); // Use your theme background color
+      padding: 0 1rem;
+      background: theme('bg');
 
-      // Ensure the dark mode background is also applied
       [data-theme="dark"] & {
           background: theme-dark('bg');
       }

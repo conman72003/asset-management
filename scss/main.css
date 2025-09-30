@@ -123,18 +123,17 @@ button {
   }
 }
 .header {
-  background: oklch(96% 0.05 264deg);
+  background: oklch(98% 0.05 264deg);
   padding: 1rem 1.5rem;
   display: flex;
   flex-grow: 1;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  border-bottom: 1px solid oklch(60% 0.1 264deg);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 [data-theme=dark] .header {
-  background-color: oklch(15% 0.05 264deg);
+  background-color: oklch(10% 0.05 264deg);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 .header__right {
@@ -322,18 +321,15 @@ button {
 .filters {
   display: flex;
   flex-direction: column;
-  height: 90vh;
   width: 20%;
-  border-inline-end: 1px solid oklch(60% 0.1 264deg);
-  background: oklch(96% 0.05 264deg);
+  background: oklch(98% 0.05 264deg);
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
   padding: 1.5rem;
   gap: 1.5rem;
 }
 [data-theme=dark] .filters {
-  border-color: oklch(40% 0.1 264deg);
-  background: oklch(15% 0.05 264deg);
+  background: oklch(10% 0.05 264deg);
 }
 .filters__section {
   display: flex;
@@ -528,13 +524,12 @@ button {
 }
 .tile-container {
   background-color: oklch(96% 0.05 264deg);
-  border: 2px solid oklch(60% 0.1 264deg);
   height: 90vh;
   width: 80%;
+  border-radius: 10px;
 }
 [data-theme=dark] .tile-container {
   background-color: oklch(15% 0.05 264deg);
-  border-color: oklch(40% 0.1 264deg);
 }
 
 .tile {

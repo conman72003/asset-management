@@ -2,13 +2,12 @@
 
 .tile-container {
   background-color: theme('bg');
-  border: 2px solid theme('border');
   height: 90vh;
   width: 80%;
+  border-radius: 10px;
 
   [data-theme="dark"] & {
     background-color: theme-dark('bg');
-    border-color: theme-dark('border');
   }
 }
 
