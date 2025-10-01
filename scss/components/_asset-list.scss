@@ -1,0 +1,107 @@
+@use '../abstracts' as *;
+
+$asset-list-columns: 2fr 1fr 1fr 1fr;
+
+.asset-list {
+    background-color: theme('bg');
+    width: 80%;
+    padding: 1.5rem;
+    overflow-y: auto; 
+    height: 85vh;
+    border-radius: 10px;
+
+    [data-theme="dark"] & {
+    background-color: theme-dark('bg');
+    }
+
+    &__header {
+        display: grid;
+        grid-template-columns: $asset-list-columns;
+        gap: 1.5rem;
+        padding: 0 1rem 1rem 1rem;
+        border-bottom: 2px solid theme('border');
+        
+        [data-theme="dark"] & {
+        border-color: theme-dark('border');
+        }
+    }
+
+    &__col-header {
+        font: $body;
+        font-weight: 600;
+        color: theme('text-muted');
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: $asset-list-columns;
+        gap: 1.5rem;
+        padding: 1rem;
+        border-radius: 8px;
+        align-items: center;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: theme('bg-light');
+            
+            [data-theme="dark"] & {
+                background-color: theme-dark('bg-light');
+            }
+        }
+    }
+
+    &__cell {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    &__icon {
+        width: 24px;
+        height: 24px;
+        stroke: theme('text-muted');
+        
+        [data-theme="dark"] & {
+            color: theme-dark('primary');
+        }
+    }
+}
+
+// Status badge styling
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 12px;
+  font-weight: 600;
+
+  &--available {
+    background-color: theme(success);
+    color: theme(success-text);
+
+    [data-theme="dark"] & {
+        background-color: theme-dark(success);
+        color: theme-dark(success-text);
+    }
+  }
+
+  &--in-use {
+    background-color: theme(info); 
+    color: theme(info-text);
+
+    [data-theme="dark"] & {
+        background-color: theme-dark(info);
+        color: theme-dark(info-text);
+    }
+  }
+  
+  &--in-repair {
+    background-color: theme(warning);
+    color: theme(warning-text);
+
+    [data-theme="dark"] & {
+        background-color: theme-dark(warning);
+        color: theme-dark(warning-text);
+    }
+  }
+}

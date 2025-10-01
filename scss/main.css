@@ -609,4 +609,90 @@ button {
     padding: 1rem;
     grid-template-columns: 1fr;
   }
+}
+.asset-list {
+  background-color: oklch(96% 0.05 264deg);
+  width: 80%;
+  padding: 1.5rem;
+  overflow-y: auto;
+  height: 85vh;
+  border-radius: 10px;
+}
+[data-theme=dark] .asset-list {
+  background-color: oklch(15% 0.05 264deg);
+}
+.asset-list__header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+  padding: 0 1rem 1rem 1rem;
+  border-bottom: 2px solid oklch(60% 0.1 264deg);
+}
+[data-theme=dark] .asset-list__header {
+  border-color: oklch(40% 0.1 264deg);
+}
+.asset-list__col-header {
+  font: 400 clamp(15px, 0.28vw + 14px, 16px)/1.5 "inter", sans-serif;
+  font-weight: 600;
+  color: oklch(40% 0.1 264deg);
+}
+.asset-list__row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+.asset-list__row:hover {
+  background-color: oklch(92% 0.05 264deg);
+}
+[data-theme=dark] .asset-list__row:hover {
+  background-color: oklch(20% 0.05 264deg);
+}
+.asset-list__cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.asset-list__icon {
+  width: 24px;
+  height: 24px;
+  stroke: oklch(40% 0.1 264deg);
+}
+[data-theme=dark] .asset-list__icon {
+  color: oklch(76% 0.1 264deg);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 12px;
+  font-weight: 600;
+}
+.status-badge--available {
+  background-color: oklch(50% 0.1 160deg);
+  color: oklch(95% 0.1 160deg);
+}
+[data-theme=dark] .status-badge--available {
+  background-color: oklch(70% 0.1 160deg);
+  color: oklch(30% 0.1 160deg);
+}
+.status-badge--in-use {
+  background-color: oklch(50% 0.1 260deg);
+  color: oklch(95% 0.1 260deg);
+}
+[data-theme=dark] .status-badge--in-use {
+  background-color: oklch(70% 0.1 260deg);
+  color: oklch(30% 0.1 260deg);
+}
+.status-badge--in-repair {
+  background-color: oklch(50% 0.1 100deg);
+  color: oklch(95% 0.1 100deg);
+}
+[data-theme=dark] .status-badge--in-repair {
+  background-color: oklch(70% 0.1 100deg);
+  color: oklch(40% 0.1 100deg);
 }/*# sourceMappingURL=main.css.map */
