@@ -656,6 +656,11 @@ button {
   align-items: center;
   gap: 1rem;
 }
+.asset-list__col-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .asset-list__icon {
   width: 24px;
   height: 24px;
