@@ -60,6 +60,15 @@ $asset-list-columns: 2fr 1fr 1fr 1fr;
         display: flex;
         align-items: center;
         gap: 1rem;
+        user-select: none;
+
+        .custom-checkbox:hover {
+            background-color: theme('bg-light');
+
+            [data-theme="dark"] & {
+                background-color: theme-dark('bg-light');
+            }
+        }
     }
     
     &__icon {

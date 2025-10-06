@@ -660,6 +660,15 @@ button {
   display: flex;
   align-items: center;
   gap: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.asset-list__col-header .custom-checkbox:hover {
+  background-color: oklch(92% 0.05 264deg);
+}
+[data-theme=dark] .asset-list__col-header .custom-checkbox:hover {
+  background-color: oklch(20% 0.05 264deg);
 }
 .asset-list__icon {
   width: 24px;
