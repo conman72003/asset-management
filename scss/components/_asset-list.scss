@@ -55,6 +55,12 @@ $asset-list-columns: 2fr 1fr 1fr 1fr;
         align-items: center;
         gap: 1rem;
     }
+
+    &__col-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
     
     &__icon {
         width: 24px;

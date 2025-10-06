@@ -1,5 +1,6 @@
 import { initSearch } from './components/searchbar.js';
 import { initFilters } from './components/filter.js';
+import { initAssetList } from './components/asset-list.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -10,5 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     initFilters();
+    initAssetList();
 
 });
