@@ -25,16 +25,17 @@ $asset-list-columns: 2fr 1fr 1fr 1fr;
         border-color: theme-dark('border');
         }
 
-        > * {
-            grid-column: 1 / -1;
-            grid-row: 1 / -1;
-        }
+        
     }
 
     &__header-main {
         display: grid;
         grid-template-columns: $asset-list-columns;
         gap: 1.5rem;
+
+        :first-child {
+            padding-left: 3.5rem; // Add padding to align with checkboxes in rows
+        }
     }
     
     &__header-actions {
@@ -43,11 +44,18 @@ $asset-list-columns: 2fr 1fr 1fr 1fr;
         align-items: center;
     }
 
-    // When selection is active, swap the visible header
     &.selection-active {
-        .asset-list__header-main {
+        // Hide the regular column headers except the first one
+        .asset-list__col-header:not(:first-child) {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        // Inside the first header, hide the text and show the button
+        .asset-list__header-text {
             display: none;
         }
+
         .asset-list__header-actions {
             display: flex;
         }

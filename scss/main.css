@@ -631,21 +631,24 @@ button {
 [data-theme=dark] .asset-list__header {
   border-color: oklch(40% 0.1 264deg);
 }
-.asset-list__header > * {
-  grid-column: 1/-1;
-  grid-row: 1/-1;
-}
 .asset-list__header-main {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 1.5rem;
+}
+.asset-list__header-main :first-child {
+  padding-left: 3.5rem;
 }
 .asset-list__header-actions {
   display: none;
   justify-content: space-between;
   align-items: center;
 }
-.asset-list.selection-active .asset-list__header-main {
+.asset-list.selection-active .asset-list__col-header:not(:first-child) {
+  opacity: 0;
+  pointer-events: none;
+}
+.asset-list.selection-active .asset-list__header-text {
   display: none;
 }
 .asset-list.selection-active .asset-list__header-actions {
