@@ -1,0 +1,43 @@
+[
+  {
+    "id": "select-item-1",
+    "name": "MacBook Pro 16\"",
+    "type": "laptop",
+    "status": "in-use",
+    "asset_id": "987-654321",
+    "assigned_to": "Conner"
+  },
+  {
+    "id": "select-item-2",
+    "name": "iPhone 14 Pro",
+    "type": "phone",
+    "status": "available",
+    "asset_id": "123-456789",
+    "assigned_to": "Unassigned"
+  },
+  {
+    "id": "select-item-3",
+    "name": "Galaxy S23 Ultra",
+    "type": "phone",
+    "status": "in-repair",
+    "asset_id": "GXY-S23-001",
+    "assigned_to": "Maintenance"
+  },
+  {
+    "id": "select-item-4",
+    "name": "Dell UltraSharp 27\"",
+    "type": "monitor",
+    "status": "available",
+    "asset_id": "MON-00123",
+    "assigned_to": "Unassigned"
+  },
+  {
+    "id": "select-item-5",
+    "name": "Google Pixel 9 Pro",
+    "type": "phone",
+    "status": "in-use",
+    "asset_id": "phn-00002",
+    "assigned_to": "Conner"
+  }
+
+]

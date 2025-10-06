@@ -24,12 +24,59 @@ $asset-list-columns: 2fr 1fr 1fr 1fr;
         [data-theme="dark"] & {
         border-color: theme-dark('border');
         }
+
+        
+    }
+
+    &__header-main {
+        display: grid;
+        grid-template-columns: $asset-list-columns;
+        gap: 1.5rem;
+
+        :first-child {
+            padding-left: 3.5rem; // Add padding to align with checkboxes in rows
+        }
+    }
+    
+    &__header-actions {
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &.selection-active {
+        // Hide the regular column headers except the first one
+        .asset-list__col-header:not(:first-child) {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        // Inside the first header, hide the text and show the button
+        .asset-list__header-text {
+            display: none;
+        }
+
+        .asset-list__header-actions {
+            display: flex;
+        }
     }
 
     &__col-header {
         font: $body;
         font-weight: 600;
         color: theme('text-muted');
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        user-select: none;
+
+        .custom-checkbox:hover {
+            background-color: theme('bg-light');
+
+            [data-theme="dark"] & {
+                background-color: theme-dark('bg-light');
+            }
+        }
     }
 
     &__row {
@@ -54,21 +101,6 @@ $asset-list-columns: 2fr 1fr 1fr 1fr;
         display: flex;
         align-items: center;
         gap: 1rem;
-    }
-
-    &__col-header {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        user-select: none;
-
-        .custom-checkbox:hover {
-            background-color: theme('bg-light');
-
-            [data-theme="dark"] & {
-                background-color: theme-dark('bg-light');
-            }
-        }
     }
     
     &__icon {
