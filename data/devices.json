@@ -38,6 +38,14 @@
     "status": "in-use",
     "asset_id": "phn-00002",
     "assigned_to": "Conner"
+  },
+  {
+  "id": "select-item-6",
+  "name": "MacBook Pro 16\"",
+  "type": "laptop",
+  "status": "in-use",
+  "asset_id": "987-654321",
+  "assigned_to": "Zach"
   }
 
 ]
