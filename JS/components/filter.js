@@ -89,9 +89,11 @@ export function initFilters(devices, renderCallback) {
 
         const searchInput = wrapper.querySelector('.filters__dropdown-search');
         if (searchInput) {
-            const options = wrapper.querySelectorAll('.filters__dropdown-options .custom-checkbox');
+            // We no longer need to get the options here.
 
             searchInput.addEventListener('keyup', () => {
+                // Get the options *inside* the event listener
+                const options = wrapper.querySelectorAll('.filters__dropdown-options .custom-checkbox');
                 const searchTerm = searchInput.value.toLowerCase();
 
                 options.forEach(option => {
