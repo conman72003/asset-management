@@ -1,10 +1,7 @@
-// This function will be responsible for rendering the list of devices
 let renderFunction = () => {};
 
-// This will hold the original, complete list of all devices
 let allDevices = [];
 
-// This object will keep track of the currently selected filters
 const activeFilters = {
     status: [],
     type: [],
@@ -22,21 +19,37 @@ function applyFilters() {
     renderFunction(filteredDevices);
 }
 
+function closeAllDropdowns() {
+    const dropdownWrappers = document.querySelectorAll('.filters__dropdown-wrapper');
+    dropdownWrappers.forEach(wrapper => {
+        wrapper.classList.remove('is-open');
+
+        const searchInput = wrapper.querySelector('.filters__dropdown-search');
+        if (searchInput) {
+            searchInput.value = '';
+
+            const options = wrapper.querySelectorAll('.filters__dropdown-options .custom-checkbox');
+            options.forEach(option => option.style.display = 'flex');
+        }
+    });
+}
+
 /**
  * A generic function to populate a filter dropdown with checkboxes.
  * @param {string} filterName - The key from the device object (e.g., 'status', 'type', 'assigned_to').
  * @param {string} dropdownId - The ID of the dropdown container in the HTML.
  */
 function populateFilter(filterName, dropdownId) {
-    const container = document.querySelector(`#${dropdownId} .filters__dropdown-options, #${dropdownId}`);
-    if (!container) return;
+    const container = document.querySelector(`#${dropdownId} .filters__dropdown-options`);
+    
+    const simpleContainer = document.querySelector(`#${dropdownId}`);
 
-    // Get a unique, sorted list of values for the given filter
+    const targetContainer = container || simpleContainer;
+    if (!targetContainer) return;
+
     const values = [...new Set(allDevices.map(device => device[filterName]))].sort();
 
-    // Create the HTML for each checkbox
-    container.innerHTML = values.map(value => {
-        // The 'name' of the input should match the filter category (e.g., 'user' for assigned_to)
+    targetContainer.innerHTML = values.map(value => {
         const inputName = filterName === 'assigned_to' ? 'user' : filterName;
         return `
             <label class="custom-checkbox">
@@ -54,12 +67,10 @@ export function initFilters(devices, renderCallback) {
     allDevices = devices;
     renderFunction = renderCallback;
 
-    // 1. Dynamically populate all filters
     populateFilter('status', 'status-dropdown');
     populateFilter('type', 'type-dropdown');
     populateFilter('assigned_to', 'assigned-dropdown');
     
-    // 2. Set up event listeners for all filter checkboxes
     const filterCheckboxes = document.querySelectorAll('.filters input[type="checkbox"]');
     
     filterCheckboxes.forEach(checkbox => {
@@ -71,8 +82,29 @@ export function initFilters(devices, renderCallback) {
             } else {
                 activeFilters[name] = activeFilters[name].filter(item => item !== value);
             }
-            
-            applyFilters();
+
+            const applyButton = document.getElementById('apply-filters-button');
+            if (applyButton) {
+                applyButton.addEventListener('click', () => {
+                    applyFilters();
+                });
+            }
+
+            const clearButton = document.getElementById('clear-filters-button');
+            if (clearButton) {
+                clearButton.addEventListener('click', () => {
+                    activeFilters.status = [];
+                    activeFilters.type = [];
+                    activeFilters.user = [];
+
+                    const filterCheckboxes = document.querySelectorAll('.filters input[type="checkbox"]');
+                    filterCheckboxes.forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+
+                    applyFilters();
+                });
+            }
         });
     });
 
@@ -89,10 +121,8 @@ export function initFilters(devices, renderCallback) {
 
         const searchInput = wrapper.querySelector('.filters__dropdown-search');
         if (searchInput) {
-            // We no longer need to get the options here.
 
             searchInput.addEventListener('keyup', () => {
-                // Get the options *inside* the event listener
                 const options = wrapper.querySelectorAll('.filters__dropdown-options .custom-checkbox');
                 const searchTerm = searchInput.value.toLowerCase();
 
@@ -109,7 +139,7 @@ export function initFilters(devices, renderCallback) {
 
         button.addEventListener('click', () => {
             const isOpen = wrapper.classList.contains('is-open');
-            dropdownWrappers.forEach(w => w.classList.remove('is-open'));
+            closeAllDropdowns();
             if (!isOpen) {
                 wrapper.classList.add('is-open');
             }
@@ -118,7 +148,7 @@ export function initFilters(devices, renderCallback) {
 
     document.addEventListener('click', (event) => {
         if (!event.target.closest('.filters__dropdown-wrapper')) {
-            dropdownWrappers.forEach(w => w.classList.remove('is-open'));
+            closeAllDropdowns();
         }
     });
 }

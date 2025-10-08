@@ -44,7 +44,6 @@ function createAssetRow(device) {
         laptop: '#icon-laptop',
         phone: '#icon-phone',
         monitor: '#icon-monitor',
-        tablet: '#icon-tablet'
     };
     const icon = iconMap[device.type] || '#icon-monitor';
     const statusClass = device.status.replace('_', '-');
@@ -62,7 +61,7 @@ function createAssetRow(device) {
                 <svg class="asset-list__icon"><use href="${icon}"></use></svg>
                 <span>${device.name}</span>
             </div>
-            <div class="asset-list__cell">
+            <div class="asset-list__cell--status">
                 <span class="status-badge status-badge--${statusClass}">${statusText}</span>
             </div>
             <div class="asset-list__cell"><span>${device.asset_id}</span></div>

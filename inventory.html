@@ -75,8 +75,8 @@
     <div class="main">
         <div class="filters">
             <div class="filters__section">
-                <button class="primary-button">Apply Filter</button>
-                <button class="secondary-button">Clear Filter</button>
+                <button class="primary-button" id="apply-filters-button">Apply Filter</button>
+                <button class="secondary-button" id="clear-filters-button">Clear Filter</button>
             </div>
 
 
@@ -92,6 +92,8 @@
                     </button>
 
                     <div class="filters__dropdown" id="status-dropdown">
+                        <div class="filters__dropdown-options">
+                        </div>
                     </div>
 
                 </div>
@@ -105,6 +107,8 @@
                     </button>
 
                     <div class="filters__dropdown" id="type-dropdown">
+                        <div class="filters__dropdown-options">
+                        </div>
                     </div>
 
                 </div>
@@ -143,7 +147,7 @@
                     </button>
                 </div>
             </div>
-            <div class="asset-list__col-header">Status</div>
+            <div class="asset-list__col-header--status">Status</div>
             <div class="asset-list__col-header">Asset ID</div>
             <div class="asset-list__col-header">Registered To</div>
         </div>

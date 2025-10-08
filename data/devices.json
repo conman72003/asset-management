@@ -4,7 +4,7 @@
     "name": "MacBook Pro 16\"",
     "type": "laptop",
     "status": "in-use",
-    "asset_id": "987-654321",
+    "asset_id": "LPT-001245",
     "assigned_to": "Conner"
   },
   {
@@ -12,7 +12,7 @@
     "name": "iPhone 14 Pro",
     "type": "phone",
     "status": "available",
-    "asset_id": "123-456789",
+    "asset_id": "PHN-008765",
     "assigned_to": "Unassigned"
   },
   {
@@ -20,7 +20,7 @@
     "name": "Galaxy S23 Ultra",
     "type": "phone",
     "status": "in-repair",
-    "asset_id": "GXY-S23-001",
+    "asset_id": "PHN-008766",
     "assigned_to": "Maintenance"
   },
   {
@@ -28,7 +28,7 @@
     "name": "Dell UltraSharp 27\"",
     "type": "monitor",
     "status": "available",
-    "asset_id": "MON-00123",
+    "asset_id": "MON-001123",
     "assigned_to": "Unassigned"
   },
   {
@@ -36,16 +36,87 @@
     "name": "Google Pixel 9 Pro",
     "type": "phone",
     "status": "in-use",
-    "asset_id": "phn-00002",
+    "asset_id": "PHN-008767",
+    "assigned_to": "Zach"
+  },
+  {
+    "id": "select-item-6",
+    "name": "Microsoft Surface Laptop 5",
+    "type": "laptop",
+    "status": "in-use",
+    "asset_id": "LPT-001246",
+    "assigned_to": "Alice"
+  },
+  {
+    "id": "select-item-7",
+    "name": "iPad Pro 12.9\"",
+    "type": "tablet",
+    "status": "available",
+    "asset_id": "TAB-003345",
+    "assigned_to": "Unassigned"
+  },
+  {
+    "id": "select-item-8",
+    "name": "Logitech MX Master 3",
+    "type": "accessory",
+    "status": "in-use",
+    "asset_id": "ACC-000111",
     "assigned_to": "Conner"
   },
   {
-  "id": "select-item-6",
-  "name": "MacBook Pro 16\"",
-  "type": "laptop",
-  "status": "in-use",
-  "asset_id": "987-654321",
-  "assigned_to": "Zach"
+    "id": "select-item-9",
+    "name": "Lenovo ThinkPad X1 Carbon",
+    "type": "laptop",
+    "status": "decommissioned",
+    "asset_id": "LPT-001240",
+    "assigned_to": "Archive"
+  },
+  {
+    "id": "select-item-10",
+    "name": "Samsung Odyssey G9",
+    "type": "monitor",
+    "status": "in-use",
+    "asset_id": "MON-001124",
+    "assigned_to": "Bob"
+  },
+  {
+    "id": "select-item-11",
+    "name": "Anker Power Bank",
+    "type": "accessory",
+    "status": "available",
+    "asset_id": "ACC-000112",
+    "assigned_to": "Unassigned"
+  },
+  {
+    "id": "select-item-12",
+    "name": "Galaxy Tab S8",
+    "type": "tablet",
+    "status": "in-repair",
+    "asset_id": "TAB-003346",
+    "assigned_to": "Maintenance"
+  },
+  {
+    "id": "select-item-13",
+    "name": "iPhone 13",
+    "type": "phone",
+    "status": "in-use",
+    "asset_id": "PHN-008760",
+    "assigned_to": "Charlie"
+  },
+  {
+    "id": "select-item-14",
+    "name": "Dell XPS 15",
+    "type": "laptop",
+    "status": "on-order",
+    "asset_id": "LPT-001247",
+    "assigned_to": "Pending"
+  },
+  {
+    "id": "select-item-15",
+    "name": "LG 34\" Ultrawide",
+    "type": "monitor",
+    "status": "in-use",
+    "asset_id": "MON-001125",
+    "assigned_to": "Alice"
   }
-
 ]
