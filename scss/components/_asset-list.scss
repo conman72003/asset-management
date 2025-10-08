@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
-$asset-list-columns: 2fr 1fr 1fr 1fr;
+$asset-list-columns: 1.25fr 1fr 1fr 1fr;
 
 .asset-list {
     background-color: theme('bg');
@@ -77,6 +77,11 @@ $asset-list-columns: 2fr 1fr 1fr 1fr;
                 background-color: theme-dark('bg-light');
             }
         }
+
+        &--status{
+            @extend .asset-list__col-header;
+            justify-content: center;
+        }
     }
 
     &__row {
@@ -101,6 +106,11 @@ $asset-list-columns: 2fr 1fr 1fr 1fr;
         display: flex;
         align-items: center;
         gap: 1rem;
+
+        &--status{
+            @extend .asset-list__cell;
+            justify-content: center;
+        }
     }
     
     &__icon {
@@ -151,4 +161,25 @@ $asset-list-columns: 2fr 1fr 1fr 1fr;
         color: theme-dark(warning-text);
     }
   }
+
+  &--decommissioned {
+    background-color: theme(danger);
+    color: theme(danger-text);
+
+    [data-theme="dark"] & {
+        background-color: theme-dark(danger);
+        color: theme-dark(danger-text);
+    }
+  }
+
+  &--on-order {
+    background-color: theme(warning); 
+    color: theme(warning-text);
+
+    [data-theme="dark"] & {
+        background-color: theme-dark(warning);
+        color: theme-dark(warning-text);
+    }
+  }
 }
+

@@ -75,8 +75,8 @@
     <div class="main">
         <div class="filters">
             <div class="filters__section">
-                <button class="primary-button">Apply Filter</button>
-                <button class="secondary-button">Clear Filter</button>
+                <button class="primary-button" id="apply-filters-button">Apply Filter</button>
+                <button class="secondary-button" id="clear-filters-button">Clear Filter</button>
             </div>
 
 
@@ -92,30 +92,8 @@
                     </button>
 
                     <div class="filters__dropdown" id="status-dropdown">
-
-                        <label class="custom-checkbox">
-                            <input type="checkbox" name="status" value="available">
-                            <span class="custom-checkbox__box">
-                                <svg class="custom-checkbox__icon"><use href="#icon-checkmark"></use></svg>
-                            </span>
-                            <span>Available</span>
-                        </label>
-
-                        <label class="custom-checkbox">
-                            <input type="checkbox" name="status" value="in-use">
-                            <span class="custom-checkbox__box">
-                                <svg class="custom-checkbox__icon"><use href="#icon-checkmark"></use></svg>
-                            </span>
-                            <span>In Use</span>
-                        </label>
-
-                        <label class="custom-checkbox">
-                            <input type="checkbox" name="status" value="in-repair">
-                            <span class="custom-checkbox__box">
-                                <svg class="custom-checkbox__icon"><use href="#icon-checkmark"></use></svg>
-                            </span>
-                            <span>In Repair</span>
-                        </label>
+                        <div class="filters__dropdown-options">
+                        </div>
                     </div>
 
                 </div>
@@ -129,31 +107,10 @@
                     </button>
 
                     <div class="filters__dropdown" id="type-dropdown">
-
-                        <label class="custom-checkbox">
-                            <input type="checkbox" name="type" value="laptop">
-                            <span class="custom-checkbox__box">
-                                <svg class="custom-checkbox__icon"><use href="#icon-checkmark"></use></svg>
-                            </span>
-                            <span>Laptop</span>
-                        </label>
-
-                        <label class="custom-checkbox">
-                            <input type="checkbox" name="type" value="phone">
-                            <span class="custom-checkbox__box">
-                                <svg class="custom-checkbox__icon"><use href="#icon-checkmark"></use></svg>
-                            </span>
-                            <span>Phone</span>
-                        </label>
-
-                        <label class="custom-checkbox">
-                            <input type="checkbox" name="type" value="tablet">
-                            <span class="custom-checkbox__box">
-                                <svg class="custom-checkbox__icon"><use href="#icon-checkmark"></use></svg>
-                            </span>
-                            <span>Tablet</span>
-                        </label>
+                        <div class="filters__dropdown-options">
+                        </div>
                     </div>
+
                 </div>
 
                 <div class="filters__dropdown-wrapper">
@@ -166,31 +123,8 @@
 
                     <div class="filters__dropdown" id="assigned-dropdown">
                         <input type="text" class="filters__dropdown-search" placeholder="Search users...">
-                        
-                        <div class="filters__dropdown-options">
-                            <label class="custom-checkbox">
-                                <input type="checkbox" name="user" value="conner">
-                                <span class="custom-checkbox__box">
-                                    <svg class="custom-checkbox__icon"><use href="#icon-checkmark"></use></svg>
-                                </span>
-                                <span>Conner</span>
-                            </label>
 
-                            <label class="custom-checkbox">
-                                <input type="checkbox" name="user" value="test">
-                                <span class="custom-checkbox__box">
-                                    <svg class="custom-checkbox__icon"><use href="#icon-checkmark"></use></svg>
-                                </span>
-                                <span>Test</span>
-                            </label>
-                            
-                            <label class="custom-checkbox">
-                                <input type="checkbox" name="user" value="unassigned">
-                                <span class="custom-checkbox__box">
-                                    <svg class="custom-checkbox__icon"><use href="#icon-checkmark"></use></svg>
-                                </span>
-                                <span>Unassigned</span>
-                            </label>
+                        <div class="filters__dropdown-options">
                         </div>
                     </div>
                 </div>
@@ -213,7 +147,7 @@
                     </button>
                 </div>
             </div>
-            <div class="asset-list__col-header">Status</div>
+            <div class="asset-list__col-header--status">Status</div>
             <div class="asset-list__col-header">Asset ID</div>
             <div class="asset-list__col-header">Registered To</div>
         </div>

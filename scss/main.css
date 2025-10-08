@@ -623,7 +623,7 @@ button {
 }
 .asset-list__header {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1.25fr 1fr 1fr 1fr;
   gap: 1.5rem;
   padding: 0 1rem 1rem 1rem;
   border-bottom: 2px solid oklch(60% 0.1 264deg);
@@ -633,7 +633,7 @@ button {
 }
 .asset-list__header-main {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1.25fr 1fr 1fr 1fr;
   gap: 1.5rem;
 }
 .asset-list__header-main :first-child {
@@ -644,7 +644,7 @@ button {
   justify-content: space-between;
   align-items: center;
 }
-.asset-list.selection-active .asset-list__col-header:not(:first-child) {
+.asset-list.selection-active .asset-list__col-header:not(:first-child), .asset-list.selection-active .asset-list__col-header--status:not(:first-child) {
   opacity: 0;
   pointer-events: none;
 }
@@ -654,7 +654,7 @@ button {
 .asset-list.selection-active .asset-list__header-actions {
   display: flex;
 }
-.asset-list__col-header {
+.asset-list__col-header, .asset-list__col-header--status {
   font: 400 clamp(15px, 0.28vw + 14px, 16px)/1.5 "inter", sans-serif;
   font-weight: 600;
   color: oklch(40% 0.1 264deg);
@@ -665,15 +665,18 @@ button {
      -moz-user-select: none;
           user-select: none;
 }
-.asset-list__col-header .custom-checkbox:hover {
+.asset-list__col-header .custom-checkbox:hover, .asset-list__col-header--status .custom-checkbox:hover {
   background-color: oklch(92% 0.05 264deg);
 }
-[data-theme=dark] .asset-list__col-header .custom-checkbox:hover {
+[data-theme=dark] .asset-list__col-header .custom-checkbox:hover, [data-theme=dark] .asset-list__col-header--status .custom-checkbox:hover {
   background-color: oklch(20% 0.05 264deg);
+}
+.asset-list__col-header--status {
+  justify-content: center;
 }
 .asset-list__row {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1.25fr 1fr 1fr 1fr;
   gap: 1.5rem;
   padding: 1rem;
   border-radius: 8px;
@@ -686,10 +689,13 @@ button {
 [data-theme=dark] .asset-list__row:hover {
   background-color: oklch(20% 0.05 264deg);
 }
-.asset-list__cell {
+.asset-list__cell, .asset-list__cell--status {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+.asset-list__cell--status {
+  justify-content: center;
 }
 .asset-list__icon {
   width: 24px;
@@ -728,6 +734,22 @@ button {
   color: oklch(95% 0.1 100deg);
 }
 [data-theme=dark] .status-badge--in-repair {
+  background-color: oklch(70% 0.1 100deg);
+  color: oklch(40% 0.1 100deg);
+}
+.status-badge--decommissioned {
+  background-color: oklch(50% 0.1 30deg);
+  color: oklch(95% 0.1 30deg);
+}
+[data-theme=dark] .status-badge--decommissioned {
+  background-color: oklch(70% 0.1 30deg);
+  color: oklch(40% 0.1 30deg);
+}
+.status-badge--on-order {
+  background-color: oklch(50% 0.1 100deg);
+  color: oklch(95% 0.1 100deg);
+}
+[data-theme=dark] .status-badge--on-order {
   background-color: oklch(70% 0.1 100deg);
   color: oklch(40% 0.1 100deg);
 }/*# sourceMappingURL=main.css.map */
